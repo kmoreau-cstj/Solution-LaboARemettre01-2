@@ -1,58 +1,60 @@
-/*But : Le programme lira le nombre donné par un utilisateur et pourra vérifier qu'il y a 5 chiffres. S'il est bien composé de 5 chiffres, le programme l'affichera à
-l'écran verticalement sinon il mentionnera que ce n'est pas un nombre à 5 chiffres.*/
-// Auteur : Noémie Lanctôt
+/*But : Le programme lira le nombre donnÃ© par un utilisateur et pourra vÃ©rifier qu'il y a 5 chiffres. S'il est bien composÃ© de 5 chiffres, le programme l'affichera Ã 
+l'Ã©cran verticalement sinon il mentionnera que ce n'est pas un nombre Ã  5 chiffres.*/
+// Auteur : NoÃ©mie LanctÃ´t
 // Date : 12/09/2020
 
-#include <iostream>		//Ici, on inclu la bibliothèque qui nous permettra de communiquer avec l'utilisateur (cin, cout, etc.)
+#include <iostream>		//FR : Ici, on inclu la bibliothÃ¨que qui nous permettra de communiquer avec l'utilisateur (cin, cout, etc.)
 
-int main()	// Dans mon programme --> Valeur entière (integer) et dans ce cas ma fonctione retournera quelque chose,	Main : Fonction principale/porte d’entrée 
+int main()	// Dans mon programme --> Valeur entiÃ¨re (integer) et dans ce cas ma fonctione retournera quelque chose,	Main : Fonction principale/porte dâ€™entrÃ©e 
 {
-	//Je déclare ma ou mes variables au début de mon programme. Ici, je déclare que ma variable est un nombre, il sera donc déclarer avec int
+	//Je dÃ©clare ma ou mes variables au dÃ©but de mon programme. Ici, je dÃ©clare que ma variable est un nombre, FR : il sera donc dÃ©clarer avec int
 	int nombre; 
-	// Je déclare aussi mes variables que j'aurai dans ma condition (if) 
+	// Je dÃ©clare aussi mes variables que j'aurai dans ma condition (if) 
 	int dizaineDeMille;
 	int mille; 
 	int centaine;
 	int dizaine;
 	int unite; 
 
-	setlocale(LC_ALL, "");		// Convertir correctement les accents de Windows à la console et on fini l'instruction par un ; 
+	setlocale(LC_ALL, "");		// Convertir correctement les accents de Windows Ã  la console et on fini l'instruction par un ; 
 
-	//Au début, je veux que mon programme invite l'utilisateur à donner un nombre à 5 chiffres
-	std::cout << " Veuillez inscrir un nombre composé de 5 chiffres : ";
+	//Au dÃ©but, je veux que mon programme invite l'utilisateur Ã  donner un nombre Ã  5 chiffres
+	std::cout << " Veuillez inscrir un nombre composÃ© de 5 chiffres : ";
 
-	//Le programme lit le nombre donné par l'utilisateur et réserve de l'espace pour le mémoriser
+	//Le programme lit le nombre donnÃ© par l'utilisateur et rÃ©serve de l'espace pour le mÃ©moriser
 	std::cin >> nombre; 
 
-	// Le programme doit déterminer si le nombre rempli la condition (5 chiffres)
+	// FR : Le programme doit dÃ©terminer si le nombre rempli la condition (5 chiffres)
 	if ((nombre >= 10000 && nombre < 100000)|| (nombre <= -10000 && nombre > -100000)) 
-	// La condition à remplir est plus grand ou égal à 10000 ET plus petit que 100000 et aussi pour inclure les nombres négatif il doit être plus petit ou égal à 10000 et plus grand que 100000
-	// && (et)	|| (ou)		>= (Plus grand ou égal)		< (Plus petit)		<= (Plus petit ou égal)		>(Plus grand)
-	// Je mets toujours ma condition dans ma parenthèse et j'ai deux conditions alors elles seront chacune dans une parenthèse à l'intérieur de ma parenthèse principale. 
+	// KM : Excellentes explications qui me montrent que tu comprends bien ce que tu fais, mais essaie d'utiliser juste les notions vues jusqu'Ã  prÃ©sent.
+	// La condition Ã  remplir est plus grand ou Ã©gal Ã  10000 ET plus petit que 100000 et FR : aussi pour inclure les nombres nÃ©gatif il doit Ãªtre plus petit ou Ã©gal Ã  10000 et plus grand que 100000
+	// && (et)	|| (ou)		>= (Plus grand ou Ã©gal)		< (Plus petit)		<= (Plus petit ou Ã©gal)		>(Plus grand)
+	// Je mets toujours ma condition dans ma parenthÃ¨se et j'ai deux conditions alors elles seront chacune dans une parenthÃ¨se Ã  l'intÃ©rieur de ma parenthÃ¨se principale. 
 	{
-		//Mettre la condition que le nombre doit remplir afin d'être affiché à l'écran
-		// J'ai décidé de prendre une solution avec des mathématiques pour facilité l'affichage vertical
+		//Mettre la condition que le nombre doit remplir afin d'Ãªtre affichÃ© Ã  l'Ã©cran
+		// FR : J'ai dÃ©cidÃ© de prendre une solution avec des mathÃ©matiques pour facilitÃ© l'affichage vertical
+		// KM : C'est parfait comme calcul ! Cela fonctionne !!!
 		dizaineDeMille = nombre / 10000;
 		mille = nombre / 1000 - dizaineDeMille * 10;
 		centaine = nombre / 100 - dizaineDeMille * 100 - mille * 10;
 		dizaine = nombre / 10 - dizaineDeMille * 1000 - mille * 100 - centaine * 10;
 		unite = nombre / 1 - dizaineDeMille * 10000 - mille * 1000 - centaine * 100 - dizaine * 10;
 
-		// Afficher de façon vertical le nombre à 5 chiffres choisi par l'utilisateur
-		std::cout << dizaineDeMille << std::endl;	//Le programme affiche à l'écran le 1er chiffre et un ajout de endl pour pouvoir faire un saut de ligne
+		// FR : Afficher de faÃ§on vertical le nombre Ã  5 chiffres choisi par l'utilisateur
+		std::cout << dizaineDeMille << std::endl;	//Le programme affiche Ã  l'Ã©cran le 1er chiffre et un ajout de endl pour pouvoir faire un saut de ligne
 		std::cout << mille << std::endl;			// Affiche le 2e chiffre
 		std::cout << centaine << std::endl;			// Affiche le 3e chiffre
 		std::cout << dizaine << std::endl;			// Affiche le 4e nombre
 		std::cout << unite;							// Affiche le 5e nombre
 	}
 
-	// Si le nombre ne rempli pas la condition, afficher à l'écran que le nombre ne contient pas 5 chiffres 
+	// FR : Si le nombre ne rempli pas la condition, afficher Ã  l'Ã©cran que le nombre ne contient pas 5 chiffres 
 	else
 	{
 		std::cout << " Ce nombre ne contient pas 5 chiffres ";		
 	}
 
-	return 0;	//ma fonction main retourne à 0 si le programme fonctionne. 
+	return 0;	//ma fonction main retourne Ã  0 si le programme fonctionne. 
 
 
 } // Accolade qui ferme le bloc d'instruction 
@@ -61,7 +63,7 @@ int main()	// Dans mon programme --> Valeur entière (integer) et dans ce cas ma 
 
 /*
 									PLAN DE TEST 
-[Nombre choisi par l'utilisateur]						[Ce que le programme affiche à l'écran]
+[Nombre choisi par l'utilisateur]						[Ce que le programme affiche Ã  l'Ã©cran]
 
 			-58746													-5																
 																	-8
